@@ -1,12 +1,24 @@
 package ie.setu.classes
 
-fun main(args: Array<String>) {
+private val persons = ArrayList<Person>()
 
+fun main(args: Array<String>) {
+    persons.add(Person("Mark", "Roche"))
+    persons.add(Person("John", "Walsh"))
+    persons.add(Person("Sheila", "Flynn"))
+
+    for ((index, value) in persons.withIndex())
+        println("$index: $value")
+}
+
+fun personInfo(){
     val person1 = Person("Mark", "Roche")
     val person2 = person1.copy(firstName = "Clare")
     val person3 = person1.copy()
+
     println(person1)
     println(person2.toString())
+
     println("person1 hashcode = ${person1.hashCode()}")
     println("person2 hashcode = ${person2.hashCode()}")
     println("person3 hashcode = ${person3.hashCode()}")
